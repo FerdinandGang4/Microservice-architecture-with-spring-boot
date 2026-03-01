@@ -1,4 +1,4 @@
-package Mapper;
+package com.example.ProductServicev1.Mapper;
 
 import com.example.ProductServicev1.Dtos.ProductRequestDto;
 import com.example.ProductServicev1.Dtos.ProductResponseDto;

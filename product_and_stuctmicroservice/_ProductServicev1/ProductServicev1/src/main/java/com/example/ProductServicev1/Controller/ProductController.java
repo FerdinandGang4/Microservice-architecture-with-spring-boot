@@ -1,11 +1,10 @@
 package com.example.ProductServicev1.Controller;
 
-import Mapper.ProductMapper;
+import com.example.ProductServicev1.Mapper.ProductMapper;
 import com.example.ProductServicev1.Dtos.ProductRequestDto;
 import com.example.ProductServicev1.Dtos.ProductResponseDto;
 import com.example.ProductServicev1.Model.Product;
 import com.example.ProductServicev1.Service.ProductService;
-import com.example.ProductServicev1.Service.ProductServiceImp;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,6 +40,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(productMapper.toDto(product));
     }
 
+    @GetMapping
     public ResponseEntity<List<ProductResponseDto>> getProducts()
     {
         List<Product> products = productService.getAllProducts();
