@@ -6,7 +6,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- ✅ Spring Boot 3.5.x -->
+	<!-- ✅ Spring Boot 3.5.0 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,22 +18,27 @@
 	<artifactId>StockServicev1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>StockServicev1</name>
-	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<!-- ✅ Supported LTS -->
+		<!-- ✅ LTS & supported -->
 		<java.version>21</java.version>
 
-		<!-- ✅ Compatible with Spring Boot 3.5 -->
-		<spring-cloud.version>2024.0.0</spring-cloud.version>
+		<!-- ✅ REQUIRED for Spring Boot 3.5.x -->
+		<spring-cloud.version>2025.0.1</spring-cloud.version>
 	</properties>
 
 	<dependencies>
 
-		<!-- Web (MVC) -->
+		<!-- Web / REST -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- MongoDB -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 
 		<!-- OpenFeign -->
@@ -49,7 +54,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Testing -->
+		<!-- Tests -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -74,7 +79,6 @@
 	<build>
 		<plugins>
 
-			<!-- Compiler -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -88,7 +92,6 @@
 				</configuration>
 			</plugin>
 
-			<!-- Spring Boot -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
