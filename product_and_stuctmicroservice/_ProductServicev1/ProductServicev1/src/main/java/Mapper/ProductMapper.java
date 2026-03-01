@@ -3,7 +3,9 @@ package Mapper;
 import com.example.ProductServicev1.Dtos.ProductRequestDto;
 import com.example.ProductServicev1.Dtos.ProductResponseDto;
 import com.example.ProductServicev1.Model.Product;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProductMapper {
     public ProductResponseDto toDto(Product product)
     {
