@@ -1,5 +1,6 @@
 package com.example.ProductServicev1.Service;
 
+import com.example.ProductServicev1.Client.StockClient;
 import com.example.ProductServicev1.Model.Product;
 import com.example.ProductServicev1.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +13,20 @@ import java.util.List;
 public class ProductServiceImp implements ProductService{
 
     private final ProductRepository productRepository;
+    private final StockClient stockClient;
 
-    public ProductServiceImp(ProductRepository productRepository) {
+    public ProductServiceImp(ProductRepository productRepository, StockClient stockClient) {
         this.productRepository = productRepository;
+        this.stockClient = stockClient;
     }
 
     @Override
     public Product addProduct(Product product) {
+        // Call StockService before saving (example logic)
+       var stock =  stockClient.getStock(product.getProductNumber());
+
+        // Example: store stock returned from StockService
+       product.setNumberOnStock(stock.getNumberOnStock());
       return productRepository.save(product);
     }
 
