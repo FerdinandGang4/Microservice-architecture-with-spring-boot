@@ -9,7 +9,7 @@ public class StockServiceImpl implements StockService{
         return switch (productNumber) {
             case "P1001" ->500;
             case "P1002" -> 25;
-            case "P1003" -> 0;
+            case "P1003" -> 10;
             default -> 0;
         };
     }
