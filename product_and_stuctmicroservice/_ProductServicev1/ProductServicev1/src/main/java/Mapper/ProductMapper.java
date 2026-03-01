@@ -14,4 +14,14 @@ public class ProductMapper {
 
         return productResponseDto;
     }
+
+    public Product toProduct(ProductRequestDto prdto)
+    {
+        Product product = new Product();
+        product.setProductName(prdto.getProductName());
+        product.setNumberOnStock(prdto.getNumberOnStock());
+
+
+        return product;
+    }
 }
